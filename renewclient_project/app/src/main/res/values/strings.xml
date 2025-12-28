@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">Renew Client</string>
+    <string name="server_base_label">Server Base URL</string>
+    <string name="port_label">Port</string>
+    <string name="protocol_label">Protocol</string>
+    <string name="save_label">Save</string>
+    <string name="health_check_label">Run Health Check</string>
+    <string name="health_check_passed">Server responded successfully</string>
+</resources>
