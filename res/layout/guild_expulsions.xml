@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <TextView android:textAppearance="?android:textAppearanceSmall" android:id="@id/textView1" android:layout_width="wrap_content" android:layout_height="wrap_content" android:maxWidth="150.0dip" android:minWidth="150.0dip" android:text="Name" android:layout_alignParentLeft="true" android:layout_alignParentTop="true" />
+    <TextView android:textAppearance="?android:textAppearanceSmall" android:id="@id/textView2" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="The Reason of Expulsion" android:layout_toRightOf="@id/textView1" android:layout_alignParentTop="true" android:layout_alignParentRight="true" />
+    <ListView android:id="@id/listView1" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_below="@id/textView1" android:layout_centerHorizontal="true" />
+</RelativeLayout>

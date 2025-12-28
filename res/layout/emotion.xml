@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:background="@drawable/menu_ninepatch" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <TextView android:textAppearance="?android:textAppearanceMedium" android:id="@id/textView1" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Emotions" android:layout_alignParentLeft="true" android:layout_alignParentTop="true" />
+    <GridView android:id="@id/gridView1" android:layout_width="fill_parent" android:layout_height="fill_parent" android:stretchMode="spacingWidthUniform" android:columnWidth="66.0dip" android:numColumns="auto_fit" android:layout_below="@id/textView1" android:layout_alignParentLeft="true" />
+</RelativeLayout>

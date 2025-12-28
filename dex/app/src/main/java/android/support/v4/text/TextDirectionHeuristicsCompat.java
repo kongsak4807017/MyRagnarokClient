@@ -1,0 +1,182 @@
+package android.support.v4.text;
+
+import java.nio.CharBuffer;
+import java.util.Locale;
+
+/* loaded from: C:\Users\User\Downloads\PREM space\dex2jar-2.0\andro259\classes.dex */
+public final class TextDirectionHeuristicsCompat {
+    private static final int STATE_FALSE = 1;
+    private static final int STATE_TRUE = 0;
+    private static final int STATE_UNKNOWN = 2;
+    public static final TextDirectionHeuristicCompat LTR = new TextDirectionHeuristicInternal(null, false);
+    public static final TextDirectionHeuristicCompat RTL = new TextDirectionHeuristicInternal(null, true);
+    public static final TextDirectionHeuristicCompat FIRSTSTRONG_LTR = new TextDirectionHeuristicInternal(FirstStrong.INSTANCE, false);
+    public static final TextDirectionHeuristicCompat FIRSTSTRONG_RTL = new TextDirectionHeuristicInternal(FirstStrong.INSTANCE, true);
+    public static final TextDirectionHeuristicCompat ANYRTL_LTR = new TextDirectionHeuristicInternal(AnyStrong.INSTANCE_RTL, false);
+    public static final TextDirectionHeuristicCompat LOCALE = TextDirectionHeuristicLocale.INSTANCE;
+
+    interface TextDirectionAlgorithm {
+        int checkRtl(CharSequence charSequence, int i, int i2);
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    public static int isRtlText(int i) {
+        switch (i) {
+            case 0:
+                return 1;
+            case 1:
+            case 2:
+                return 0;
+            default:
+                return 2;
+        }
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    public static int isRtlTextOrFormat(int i) {
+        switch (i) {
+            case 0:
+            case 14:
+            case 15:
+                return 1;
+            case 1:
+            case 2:
+            case 16:
+            case 17:
+                return 0;
+            case 3:
+            case 4:
+            case 5:
+            case 6:
+            case 7:
+            case 8:
+            case 9:
+            case 10:
+            case 11:
+            case 12:
+            case 13:
+            default:
+                return 2;
+        }
+    }
+
+    static abstract class TextDirectionHeuristicImpl implements TextDirectionHeuristicCompat {
+        private final TextDirectionAlgorithm mAlgorithm;
+
+        protected abstract boolean defaultIsRtl();
+
+        public TextDirectionHeuristicImpl(TextDirectionAlgorithm textDirectionAlgorithm) {
+            this.mAlgorithm = textDirectionAlgorithm;
+        }
+
+        @Override // android.support.v4.text.TextDirectionHeuristicCompat
+        public boolean isRtl(char[] cArr, int i, int i2) {
+            return isRtl(CharBuffer.wrap(cArr), i, i2);
+        }
+
+        @Override // android.support.v4.text.TextDirectionHeuristicCompat
+        public boolean isRtl(CharSequence charSequence, int i, int i2) {
+            if (charSequence == null || i < 0 || i2 < 0 || charSequence.length() - i2 < i) {
+                throw new IllegalArgumentException();
+            }
+            if (this.mAlgorithm == null) {
+                return defaultIsRtl();
+            }
+            return doCheck(charSequence, i, i2);
+        }
+
+        private boolean doCheck(CharSequence charSequence, int i, int i2) {
+            switch (this.mAlgorithm.checkRtl(charSequence, i, i2)) {
+                case 0:
+                    return true;
+                case 1:
+                    return false;
+                default:
+                    return defaultIsRtl();
+            }
+        }
+    }
+
+    static class TextDirectionHeuristicInternal extends TextDirectionHeuristicImpl {
+        private final boolean mDefaultIsRtl;
+
+        private TextDirectionHeuristicInternal(TextDirectionAlgorithm textDirectionAlgorithm, boolean z) {
+            super(textDirectionAlgorithm);
+            this.mDefaultIsRtl = z;
+        }
+
+        @Override // android.support.v4.text.TextDirectionHeuristicsCompat.TextDirectionHeuristicImpl
+        protected boolean defaultIsRtl() {
+            return this.mDefaultIsRtl;
+        }
+    }
+
+    static class FirstStrong implements TextDirectionAlgorithm {
+        public static final FirstStrong INSTANCE = new FirstStrong();
+
+        @Override // android.support.v4.text.TextDirectionHeuristicsCompat.TextDirectionAlgorithm
+        public int checkRtl(CharSequence charSequence, int i, int i2) {
+            int iIsRtlTextOrFormat = 2;
+            int i3 = i + i2;
+            for (int i4 = i; i4 < i3 && iIsRtlTextOrFormat == 2; i4++) {
+                iIsRtlTextOrFormat = TextDirectionHeuristicsCompat.isRtlTextOrFormat(Character.getDirectionality(charSequence.charAt(i4)));
+            }
+            return iIsRtlTextOrFormat;
+        }
+
+        private FirstStrong() {
+        }
+    }
+
+    static class AnyStrong implements TextDirectionAlgorithm {
+        private final boolean mLookForRtl;
+        public static final AnyStrong INSTANCE_RTL = new AnyStrong(true);
+        public static final AnyStrong INSTANCE_LTR = new AnyStrong(false);
+
+        @Override // android.support.v4.text.TextDirectionHeuristicsCompat.TextDirectionAlgorithm
+        public int checkRtl(CharSequence charSequence, int i, int i2) {
+            boolean z = false;
+            int i3 = i + i2;
+            for (int i4 = i; i4 < i3; i4++) {
+                switch (TextDirectionHeuristicsCompat.isRtlText(Character.getDirectionality(charSequence.charAt(i4)))) {
+                    case 0:
+                        if (this.mLookForRtl) {
+                            return 0;
+                        }
+                        z = true;
+                        break;
+                    case 1:
+                        if (!this.mLookForRtl) {
+                            return 1;
+                        }
+                        z = true;
+                        break;
+                }
+            }
+            if (z) {
+                return this.mLookForRtl ? 1 : 0;
+            }
+            return 2;
+        }
+
+        private AnyStrong(boolean z) {
+            this.mLookForRtl = z;
+        }
+    }
+
+    static class TextDirectionHeuristicLocale extends TextDirectionHeuristicImpl {
+        public static final TextDirectionHeuristicLocale INSTANCE = new TextDirectionHeuristicLocale();
+
+        public TextDirectionHeuristicLocale() {
+            super(null);
+        }
+
+        @Override // android.support.v4.text.TextDirectionHeuristicsCompat.TextDirectionHeuristicImpl
+        protected boolean defaultIsRtl() {
+            return TextUtilsCompat.getLayoutDirectionFromLocale(Locale.getDefault()) == 1;
+        }
+    }
+
+    private TextDirectionHeuristicsCompat() {
+    }
+}

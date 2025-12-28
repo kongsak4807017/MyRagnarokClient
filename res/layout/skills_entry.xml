@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:background="@color/Black" android:layout_width="fill_parent" android:layout_height="50.0dip"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <ImageView android:id="@id/imageView1" android:layout_width="wrap_content" android:layout_height="wrap_content" android:src="@drawable/ic_launcher" android:minWidth="25.0dip" android:minHeight="25.0dip" android:layout_alignParentLeft="true" android:layout_centerVertical="true" />
+    <TextView android:textAppearance="?android:textAppearanceSmall" android:id="@id/textView2" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Lv : 5 / 10" android:layout_toLeftOf="@id/textView3" android:layout_toRightOf="@id/button1" android:layout_alignParentBottom="true" />
+    <TextView android:textAppearance="?android:textAppearanceSmall" android:id="@id/textView3" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="SP : 100" android:layout_alignParentRight="true" android:layout_alignParentBottom="true" />
+    <Button android:id="@id/button1" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Up!" android:layout_toRightOf="@id/imageView1" android:layout_centerVertical="true" />
+    <TextView android:textAppearance="?android:textAppearanceMedium" android:id="@id/textView1" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Rune Mastery" android:layout_toRightOf="@id/button1" android:layout_alignParentTop="true" />
+</RelativeLayout>

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView android1:id="@id/ScrollView01" android1:layout_width="fill_parent" android1:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android"
+  xmlns:android1="http://schemas.android.com/apk/res/android">
+    <RelativeLayout android1:scrollbars="vertical" android1:layout_width="fill_parent" android1:layout_height="wrap_content" android1:overScrollMode="ifContentScrolls">
+        <CheckBox android1:id="@id/checkBox1" android1:layout_width="wrap_content" android1:layout_height="wrap_content" android1:text="High quality Textures" android1:layout_alignParentLeft="true" android1:layout_alignParentTop="true" />
+        <CheckBox android1:id="@id/checkBox2" android1:layout_width="wrap_content" android1:layout_height="wrap_content" android1:text="Lights and Shadows" android1:layout_below="@id/checkBox1" android1:layout_alignParentLeft="true" />
+        <CheckBox android1:id="@id/checkBox3" android1:layout_width="wrap_content" android1:layout_height="wrap_content" android1:text="Interpolation" android1:layout_below="@id/checkBox2" android1:layout_alignParentLeft="true" />
+        <Button android1:id="@id/button1" android1:visibility="gone" android1:layout_width="wrap_content" android1:layout_height="wrap_content" android1:layout_marginLeft="30.0dip" android1:text="Change" android1:layout_below="@id/checkBox3" android1:layout_alignParentRight="true" style="?android:buttonStyleSmall" />
+        <TextView android1:textAppearance="?android:textAppearanceMedium" android1:id="@id/textView3" android1:layout_width="wrap_content" android1:layout_height="wrap_content" android1:layout_marginTop="20.0dip" android1:text="Client directory" android1:layout_below="@id/button1" android1:layout_alignParentLeft="true" />
+        <TextView android1:textAppearance="?android:textAppearanceSmall" android1:id="@id/textView5" android1:layout_width="wrap_content" android1:layout_height="wrap_content" android1:text="/sdcard/ragnarok" android1:layout_below="@id/textView3" android1:layout_alignParentLeft="true" />
+        <Button android1:id="@id/button2" android1:layout_width="wrap_content" android1:layout_height="wrap_content" android1:text="Change" android1:layout_alignTop="@id/textView3" android1:layout_alignParentRight="true" style="?android:buttonStyleSmall" />
+    </RelativeLayout>
+</ScrollView>

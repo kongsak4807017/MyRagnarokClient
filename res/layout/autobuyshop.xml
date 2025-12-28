@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:background="@color/HalfTransparentBlack" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <LinearLayout android:id="@id/footer" android:layout_width="fill_parent" android:layout_height="wrap_content" android:weightSum="3.0" android:layout_alignParentBottom="true">
+        <LinearLayout android:orientation="vertical" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_weight="1.0">
+            <TextView android:textAppearance="?android:textAppearanceSmall" android:gravity="center|left" android:id="@id/textView7" android:layout_width="wrap_content" android:layout_height="wrap_content" android:maxWidth="150.0dip" android:text="Total zeny" android:maxLines="1" />
+            <TextView android:textAppearance="?android:textAppearanceSmall" android:id="@id/textView4" android:layout_width="wrap_content" android:layout_height="wrap_content" android:maxWidth="150.0dip" android:text="limit zeny" android:maxLines="1" />
+            <TextView android:textAppearance="?android:textAppearanceSmall" android:gravity="center|left" android:id="@id/textView1" android:layout_width="wrap_content" android:layout_height="wrap_content" android:maxWidth="150.0dip" android:text="my zeny" android:maxLines="1" />
+        </LinearLayout>
+        <CheckBox android:id="@id/checkBox1" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Ask amount" android:layout_weight="1.0" />
+        <Button android:id="@id/button1" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Sell" android:layout_weight="1.0" />
+    </LinearLayout>
+    <LinearLayout android:orientation="vertical" android:id="@id/linearLayout1" android:layout_width="fill_parent" android:layout_height="fill_parent" android:weightSum="3.0" android:layout_above="@id/footer" android:layout_alignParentLeft="true">
+        <LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="142.0dip" android:weightSum="1.0">
+            <TextView android:id="@id/textView2" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Wanted items" />
+            <ListView android:id="@id/listview_want" android:layout_width="fill_parent" android:layout_height="139.0dip" />
+        </LinearLayout>
+        <LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="107.0dip" android:weightSum="1.0">
+            <TextView android:id="@id/textView3" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Selling items" />
+            <ListView android:id="@id/listview_sell" android:layout_width="fill_parent" android:layout_height="123.0dip" />
+        </LinearLayout>
+        <LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="fill_parent" android:weightSum="1.0">
+            <TextView android:id="@id/textView5" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Available items" />
+            <ListView android:id="@id/listview_all" android:layout_width="fill_parent" android:layout_height="116.0dip" />
+        </LinearLayout>
+    </LinearLayout>
+</RelativeLayout>

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <TextView android:textAppearance="?android:textAppearanceSmall" android:id="@id/textView1" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Position Title" android:layout_toLeftOf="@id/textView4" android:layout_alignParentLeft="true" android:layout_alignParentTop="true" />
+    <TextView android:textAppearance="?android:textAppearanceSmall" android:id="@id/textView2" android:layout_width="wrap_content" android:layout_height="wrap_content" android:maxWidth="50.0dip" android:minWidth="50.0dip" android:text="Tax %" android:layout_alignParentTop="true" android:layout_alignParentRight="true" />
+    <TextView android:textAppearance="?android:textAppearanceSmall" android:id="@id/textView3" android:layout_width="wrap_content" android:layout_height="wrap_content" android:maxWidth="50.0dip" android:minWidth="50.0dip" android:text="Punish" android:layout_toLeftOf="@id/textView2" android:layout_alignParentTop="true" />
+    <TextView android:textAppearance="?android:textAppearanceSmall" android:id="@id/textView4" android:layout_width="wrap_content" android:layout_height="wrap_content" android:maxWidth="70.0dip" android:minWidth="50.0dip" android:text="Invitation" android:layout_toLeftOf="@id/textView3" android:layout_alignParentTop="true" />
+    <ListView android:id="@id/listView1" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_below="@id/textView1" android:layout_centerHorizontal="true" />
+</RelativeLayout>

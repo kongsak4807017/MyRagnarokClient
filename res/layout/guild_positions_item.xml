@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <TextView android:textAppearance="?android:textAppearanceSmall" android:gravity="center_vertical" android:id="@id/textView1" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Position Title" android:layout_toLeftOf="@id/checkBox1" android:layout_alignBottom="@id/checkBox1" android:layout_alignParentLeft="true" android:layout_alignParentTop="true" />
+    <TextView android:textAppearance="?android:textAppearanceSmall" android:gravity="center|right" android:id="@id/textView2" android:layout_width="wrap_content" android:layout_height="wrap_content" android:minWidth="50.0dip" android:text="50%" android:layout_alignBottom="@id/checkBox2" android:layout_alignParentTop="true" android:layout_alignParentRight="true" />
+    <CheckBox android:id="@id/checkBox2" android:background="@color/HalfTransparentBlack" android:layout_width="wrap_content" android:layout_height="wrap_content" android:minWidth="50.0dip" android:layout_toLeftOf="@id/textView2" android:layout_alignParentTop="true" />
+    <CheckBox android:id="@id/checkBox1" android:background="@color/HalfTransparentBlack" android:layout_width="wrap_content" android:layout_height="wrap_content" android:minWidth="50.0dip" android:layout_toLeftOf="@id/checkBox2" android:layout_alignParentTop="true" />
+</RelativeLayout>

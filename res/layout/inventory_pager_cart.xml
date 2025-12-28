@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:background="@color/HalfTransparentBlack" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <GridView android:id="@id/gridView1" android:layout_width="fill_parent" android:layout_height="wrap_content" android:numColumns="3" android:layout_above="@id/textView1" android:layout_centerHorizontal="true" />
+    <TextView android:textAppearance="?android:textAppearanceMedium" android:id="@id/textView1" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Num: 0/100 Weight: 0/8000" android:layout_alignParentLeft="true" android:layout_alignParentBottom="true" />
+</RelativeLayout>

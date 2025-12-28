@@ -1,0 +1,15 @@
+package o;
+
+/* loaded from: C:\Users\User\Downloads\PREM space\dex2jar-2.0\andro259\classes.dex */
+public abstract class ku {
+    abstract void h_();
+
+    /* renamed from: ˮ͈ */
+    public abstract void mo439();
+
+    /* renamed from: 櫯 */
+    abstract boolean mo440();
+
+    ku() {
+    }
+}

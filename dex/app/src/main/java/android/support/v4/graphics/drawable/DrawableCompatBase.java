@@ -1,0 +1,48 @@
+package android.support.v4.graphics.drawable;
+
+import android.content.res.ColorStateList;
+import android.content.res.Resources;
+import android.graphics.PorterDuff;
+import android.graphics.drawable.Drawable;
+import android.util.AttributeSet;
+import java.io.IOException;
+import org.xmlpull.v1.XmlPullParser;
+import org.xmlpull.v1.XmlPullParserException;
+
+/* loaded from: C:\Users\User\Downloads\PREM space\dex2jar-2.0\andro259\classes.dex */
+class DrawableCompatBase {
+    DrawableCompatBase() {
+    }
+
+    /* JADX WARN: Multi-variable type inference failed */
+    public static void setTint(Drawable drawable, int i) {
+        if (drawable instanceof DrawableWrapper) {
+            ((DrawableWrapper) drawable).setCompatTint(i);
+        }
+    }
+
+    /* JADX WARN: Multi-variable type inference failed */
+    public static void setTintList(Drawable drawable, ColorStateList colorStateList) {
+        if (drawable instanceof DrawableWrapper) {
+            ((DrawableWrapper) drawable).setCompatTintList(colorStateList);
+        }
+    }
+
+    /* JADX WARN: Multi-variable type inference failed */
+    public static void setTintMode(Drawable drawable, PorterDuff.Mode mode) {
+        if (drawable instanceof DrawableWrapper) {
+            ((DrawableWrapper) drawable).setCompatTintMode(mode);
+        }
+    }
+
+    public static Drawable wrapForTinting(Drawable drawable) {
+        if (!(drawable instanceof DrawableWrapperDonut)) {
+            return new DrawableWrapperDonut(drawable);
+        }
+        return drawable;
+    }
+
+    public static void inflate(Drawable drawable, Resources resources, XmlPullParser xmlPullParser, AttributeSet attributeSet, Resources.Theme theme) throws XmlPullParserException, IOException {
+        drawable.inflate(resources, xmlPullParser, attributeSet);
+    }
+}

@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:layout_width="fill_parent" android:layout_height="fill_parent" android:minHeight="30.0dip"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <ImageView android:id="@id/image_view" android:layout_width="25.0dip" android:layout_height="25.0dip" android:src="@drawable/ic_launcher" android:layout_alignParentLeft="true" android:layout_centerVertical="true" />
+    <TextView android:textAppearance="?android:textAppearanceSmall" android:id="@id/text_view_name" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="+20 Very Very Very Strong SomeCharacter's Earth Flamberge" android:layout_toLeftOf="@id/text_view_price" android:layout_toRightOf="@id/image_view" android:layout_centerVertical="true" />
+    <TextView android:textAppearance="?android:textAppearanceSmall" android:gravity="right" android:id="@id/text_view_price" android:layout_width="100.0dip" android:layout_height="wrap_content" android:text="1,000,000,000 Z" android:layout_alignParentRight="true" android:layout_centerVertical="true" />
+    <TextView android:textAppearance="?android:textAppearanceSmall" android:gravity="center|left|top" android:id="@id/text_view_amount" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="30,000" android:layout_alignLeft="@id/image_view" android:layout_alignTop="@id/image_view" android:layout_alignRight="@id/text_view_name" android:layout_alignBottom="@id/image_view" />
+</RelativeLayout>

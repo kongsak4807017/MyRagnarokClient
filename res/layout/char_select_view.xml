@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:id="@id/layout_char_select_view" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <ImageView android:id="@id/imageview_character" android:layout_width="wrap_content" android:layout_height="wrap_content" android:src="@drawable/ic_launcher" android:layout_alignParentLeft="true" android:layout_alignParentTop="true" android:layout_alignParentRight="true" android:layout_alignParentBottom="true" />
+    <TextView android:textAppearance="?android:textAppearanceLarge" android:id="@id/textview_right" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/Bullet" android:layout_alignParentRight="true" android:layout_centerVertical="true" />
+    <TextView android:textAppearance="?android:textAppearanceLarge" android:id="@id/textview_left" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/Bullet" android:layout_alignParentLeft="true" android:layout_centerVertical="true" />
+    <Button android:id="@id/button_delete" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Delete" android:layout_alignParentLeft="true" android:layout_alignParentBottom="true" style="?android:buttonStyleSmall" />
+    <Button android:id="@id/button_dontdelete" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Don't delete" android:layout_toRightOf="@id/button_delete" android:layout_alignParentBottom="true" style="?android:buttonStyleSmall" />
+    <TextView android:textAppearance="?android:textAppearanceLarge" android:id="@id/textview_name" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/Name" android:layout_above="@id/tv_delete_date" android:layout_alignParentBottom="true" android:layout_centerHorizontal="true" />
+    <TextView android:textAppearance="?android:textAppearanceSmall" android:id="@id/tv_delete_date" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Delete time : 2013-01-01 22:22:22" android:layout_alignParentLeft="true" android:layout_alignParentTop="true" />
+    <Button android:id="@id/btn_ok" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="OK" android:layout_alignParentRight="true" android:layout_alignParentBottom="true" />
+</RelativeLayout>

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:id="@id/relativeLayout1" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <ListView android:id="@id/listView1" android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_below="@id/textView2" />
+    <TextView android:textAppearance="?android:textAppearanceMedium" android:id="@id/textView1" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Please select the game directory" android:layout_alignParentTop="true" android:layout_centerHorizontal="true" />
+    <Button android:id="@id/button1" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="SD Card" android:layout_below="@id/textView1" android:layout_alignParentLeft="true" />
+    <TextView android:textAppearance="?android:textAppearanceSmall" android:id="@id/textView2" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Small Text" android:layout_below="@id/button1" android:layout_alignParentLeft="true" />
+    <Button android:id="@id/button2" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Downloads" android:layout_toRightOf="@id/button1" android:layout_below="@id/textView1" />
+</RelativeLayout>
