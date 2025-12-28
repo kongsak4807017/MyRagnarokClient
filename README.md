@@ -63,5 +63,11 @@
 - จัดการ signing, versioning (SemVer) และ changelog
 - เตรียม artifact สำหรับ Play Store หรือช่องทางแจกจ่ายภายใน
 
+## ตำแหน่งซอร์สใน repository (ใช้เป็นแหล่งอ้างอิงใหม่)
+- ซอร์สเดิมที่ถอดมาจากไฟล์ dex ยังเก็บไว้ในโฟลเดอร์ `/dex/` เพื่อใช้อ้างอิงได้
+- โค้ดเวอร์ชันใหม่สำหรับ RenewClient อยู่ในโฟลเดอร์ `renewclient_project/` (ระดับเดียวกับ `dex/`)
+  - เปิดและพัฒนาแอปใหม่นี้ใน Android Studio ได้ทันทีจากโฟลเดอร์ `renewclient_project`
+  - เมื่อมีการอัปเดตให้ commit/push โฟลเดอร์นี้ใน repository เดียวกันเพื่อเป็นจุดอ้างอิงล่าสุด
+
 ## RenewClient โครงการใหม่
 โค้ดเวอร์ชันใหม่ที่จัดทำเป็นโครงสร้างเต็มอยู่ในโฟลเดอร์ `renewclient_project/` พร้อมตัวอย่างสถาปัตยกรรมและจุดเริ่มต้นสำหรับ UI/Use case/Repository/Networking.
